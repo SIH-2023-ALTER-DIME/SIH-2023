@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>SmartProjex | Login & Registration </title>
+        <link rel="stylesheet" href="css/loginpage.css">
+        <link rel="shortcut icon" type="x-icon" href="landingpage_img/icon.png">
+        <link rel="stylesheet" href="../SIHP/js/loginpage.js">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <div class="logo">
+                    <img src="../SIHP/landingpage_img/logo.png" alt="">
+                </div>
+                <form id="login" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="register" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="text" class="input-field" placeholder="Enter Full Name" required>
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <label for="field" class="input-option">Choose One:</label> 
+                        <select name="field" class="input-field">
+                            <option value="student">Choose</option> 
+                            <option value="student">Student</option> 
+                            <option value="college/university">College/University</option> 
+                        </select>
+                    <input type="text" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>I agree to the terms & condtions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+            
+        </div>
+
+        <!-- Script -->
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+
+        </script>
+
+    </body>
+</html>
