@@ -10,6 +10,7 @@ import UploadProjectPage from "./pages/UploadProjectPage";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const App = () => {
   const { currentUser } = useContext(AuthContext);
@@ -21,6 +22,7 @@ const App = () => {
   };
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/about" Component={AboutPage} />
         <Route path="/colleges" Component={CollegesPage} />
