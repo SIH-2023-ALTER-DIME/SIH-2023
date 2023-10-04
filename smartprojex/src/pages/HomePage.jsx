@@ -3,13 +3,14 @@ import "../css/landingpage.css";
 import { Link } from "react-router-dom";
 import logo from "../images/landingPageImg/logo.png";
 import "../css/footer.css";
+import Navbar from "../Navbar";
 
 const HomePage = () => {
   return (
     <>
       <div className="container">
         <div className="row">
-          <nav className="navbar">
+          {/* <nav className="navbar">
             <img src={logo} />
             <ul>
               <li>
@@ -31,7 +32,8 @@ const HomePage = () => {
                 <Link to="/loginorsignup">Login/Register</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
+          {/* <Navbar /> */}
           <div className="content">
             <h1>
               Connecting Minds, Fostering Innovation: <br />
