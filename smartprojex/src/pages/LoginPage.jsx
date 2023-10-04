@@ -3,7 +3,10 @@ import "../css/loginpage.css";
 import logo from "../images/landingPageImg/logo.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../firebase";
 
 const LoginPage = () => {
@@ -32,12 +35,20 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, userEmail, userPassword);
-      navigate("/colleges");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
-  const handleSignup = async () => {};
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, userEmail, userPassword);
+      navigate("/loginorsignup");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="hero">
@@ -87,6 +98,7 @@ const LoginPage = () => {
             className="input-field"
             placeholder="Email Id"
             required
+            onChange={(e) => setUserEmail(e.target.value)}
           />
           <label for="field" className="input-option">
             Choose One:
@@ -100,6 +112,7 @@ const LoginPage = () => {
             type="password"
             className="input-field"
             placeholder="Enter Password"
+            onChange={(e) => setUserPassword(e.target.value)}
             required
           />
           <input type="checkbox" className="check-box" />
